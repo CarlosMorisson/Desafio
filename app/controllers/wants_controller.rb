@@ -1,4 +1,5 @@
 class WantsController < ApplicationController
+   
     def index
         wants = current_user.wants
         @movies = []

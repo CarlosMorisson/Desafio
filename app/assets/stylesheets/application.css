@@ -1,3 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+}
+.main {
+  height: 720px;
+  background: url("../img/bg.jpg") center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position:relative;
+
+}
+.main-child{
+  z-index: 1;
+
+}
+.main h1{
+  font-size:64px;
+  max-width:480px ;
+  text-align: center;
+}
+.gradient {
+  background: rgba (0,0,0,.5);
+
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
