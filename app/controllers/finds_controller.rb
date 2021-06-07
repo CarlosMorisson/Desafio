@@ -7,6 +7,7 @@ class FindsController < ApplicationController
         @search.query(@movie_name) # the query to search against
         
         @movie_finds = @search.fetch # makes request
+        
     end
 
 end
