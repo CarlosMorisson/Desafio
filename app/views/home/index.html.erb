@@ -1,7 +1,50 @@
 <h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<p> by caalera </p>
+<div class = "container">
+<nav class = "navbar" role = "navigation" aria-labe="main navigation">
+<div id="navbarBasicExample" class="navbar-menu">
+<div class ="navbar-start">
+ "
+<%= link_to "page", root_path, class: "navbar-item" %>
+<%=link_to "My list", wants_path , class: "navbar_item" %>
+<%= link_to "find_movies", find_movies_path, class >"navbar_item" %>
+
+</div>
+</div>
+<div class ="navbar-end">
+<div class ="navbar-item">
+<div class="buttons">
 
 <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <%= link_to "Perfil", edit_user_registration_path %>
+</div>
+</div>
+</div>
+</nav>
+
+<h1 class = "title is-3">DesafioJera</h1>
+<p> Welcome! Let's create a movie list? </p>
 <p class="notice"><%=notice%> </p>
 <p class="alert"><%=alert%></p>
+<br>
+<div class = "field">
+<%=form_tag(finds_path, method: :get) do%>
+<%= label_tag(:q, "find what you want to watch", class: "label")%>
+<%= text_field_tag(:q, '', class: "input is-info")%>
+<br>
+<%= submit_tag("Search", class :"button is info")%>
+<% end %>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<footer class="footer">
+<div calss="content has-text-centered">
+<p>
+<strong>Desafio</strong> 
+</p>
+</div>
+</footer>
+</div>
