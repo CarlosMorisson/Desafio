@@ -1,24 +1,28 @@
-h1>Home#index</h1>
+<h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
  <header class = "navbar navbar-fixed-top">
 <div class = "container">
 </header>
 <nav>
 <ul class = "navbar" role = "navigation", id = "barNavigation" >
- 
- <li><% link_to "pages", root_path, id = "barNavigation" %></li>
- <li><% link_to "finds", root_path, id = "finds"%></li>
- <li><% link_to "finds_movies", root_path, id="finds_movies"%></li>
- <li><% link_to "wants", root_path, id="wants"%></li>
- </ul>
+  <li><%= link_to "Home", root_path %></li>
+  <li><%= link_to "finds", finds_path %></li>
+  <li><%= link_to "finds_movies", root_path %></li>
+</ul>
+ <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+ <%= link_to "Perfil", edit_user_registration_path %>
 
  </nav>
 
+<div class = "field">
+    <%= form_tag(finds_path, method: :get) do %>
+      <%= label_tag(:movie_name, "Search for a movie:") %>
+      <%= text_field_tag(:movie_name) %>
+      <br>
+      <%= submit_tag("Search!") %>
+     <% end %> 
+  </div>   
 
-
-
- <%= link_to "Sair", destroy_user_session_path, method: :delete %>
- <%= link_to "Perfil", edit_user_registration_path %>
 
  
  <p class="notice"><%=notice%> </p>
