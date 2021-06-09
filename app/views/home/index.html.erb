@@ -1,23 +1,25 @@
-<html>
-<head>
-<%nav_bar brand:"Kustee", brand_link: root_url%>
+
+
 <h1>Home#index</h1>
-<p> by caalera </p>
-<div>
-<h1>What movie do you to see?</h1>
-<%= link_to "finds_movies", finds_movies_path %>
-</div>
+<p>Find me in app/views/home/index.html.erb</p>
+ <header class = "navbar navbar-fixed-top">
+<div class = "container">
+</header>
+<nav>
+<ul class = "navbar" role = "navigation" >
+  <li><%= link_to "Home", root_path %></li>
+  <li><%= link_to "finded_movies", finded_movies_path %></li>
+</ul>
+ <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+ <%= link_to "Perfil", edit_user_registration_path %>
 
-<%= link_to "page", root_path, class: "navbar-item" %>
-<div>
-<h2> Movie List </h2>
-<%=link_to "My list", wants_path %>
-</div>
-</head>
-<body>
-</body>
+ </nav>
 
-<%= link_to "Sair", destroy_user_session_path, method: :delete %>
-<%= link_to "Perfil", edit_user_registration_path %>
-
-</html>
+<div class = "field">
+    <%= form_tag(finds_path, method: :get) do %>
+      <%= label_tag(:movie_name, "Search for a movie:") %>
+      <%= text_field_tag(:movie_name) %>
+      <br>
+      <%= submit_tag("Search!") %>
+     <% end %> 
+  </div>   

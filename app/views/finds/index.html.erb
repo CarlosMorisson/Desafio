@@ -1,0 +1,18 @@
+<% @movie_finds.each do |movie| %>
+ <strong> <p><%= movie['title'] %></p> </strong>
+
+ <%# if current_user.wishes.exists?(movie_id: movie['id']) %>
+    <%#= link_to "Remove from list", wish_path(id: movie['id']), method: :delete, class: "button is-info" %>
+ <%# else %>
+    <%#= form_tag(wishes_path, :method => :post) do %>
+      <%#= hidden_field_tag(:movie_id, movie['id'] ) %>
+      <%#= submit_tag("Add to list", class: "button is-info")  %>
+    <%# end %> 
+ <%# end %> 
+  <p><img src='http://cf2.imgobject.com/t/p/w200/<%=movie['poster_path']%>'></p>
+  <strong><p>Description: </p></strong>
+  <p><%= movie['overview'] %></p>
+  <p><% movie['poster_path'] %></p>
+  <strong><p>Release date of the movie:</p></strong>
+  <p><%= movie['release_date'] %></p> <br>
+<% end %>

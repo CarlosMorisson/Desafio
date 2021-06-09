@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates_uniqueness_of :email
+
+  has_many :finded_movies
+
 end

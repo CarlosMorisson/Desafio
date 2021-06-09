@@ -1,0 +1,21 @@
+<h1> finded movies<h1>
+
+<% if @movie.finded_movies.present?%>
+<table>
+<thead>
+<tr>
+<th> Title </th>
+<th>movie poster</th>
+</tr>
+</thead>
+<tbody>
+<% @movie.each.do |movie_code| %>
+<tr>
+<td><%=movie['title']%></td>
+<td><%=movie['poster_path']%></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+<%else>
+<p> there is no finded movies</p>
