@@ -1,6 +1,4 @@
-<html>
-<head>
-<%nav_bar brand:"Kustee", brand_link: root_url%>
+
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
  <header class = "navbar navbar-fixed-top">
@@ -9,8 +7,7 @@
 <nav>
 <ul class = "navbar" role = "navigation", id = "barNavigation" >
   <li><%= link_to "Home", root_path %></li>
-  <li><%= link_to "finds", finds_path %></li>
-  <li><%= link_to "finds_movies", root_path %></li>
+  <li><%= link_to "finded_movies", finded_movies_path %></li>
 </ul>
  <%= link_to "Sair", destroy_user_session_path, method: :delete %>
  <%= link_to "Perfil", edit_user_registration_path %>

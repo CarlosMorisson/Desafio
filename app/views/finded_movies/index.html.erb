@@ -1,15 +1,22 @@
-<%@finded_movies. each do |finded_movies|%>
-<strong> <p><%= movie['title'] %></p> </strong>
+<h1> finded movies<h1>
 
-<p><img src='http://cf2.imgobject.com/t/p/w200/<%=movie['poster_path']%>'></p> 
-
-
-<ul>
-<li><%=movie['movie_code']%></li>
-<li><%=movie['movie_code']%></li>
-<li><%=movie['movie_code']%></li>
-<li><%=movie['movie_code']%></li>
-<li><%=movie['movie_code']%></li>
-<li><%=movie['movie_code']%></li>
-</ul>
+<% if @movie.finded_movies.present?%>
+<table>
+<thead>
+<tr>
+<th> Title </th>
+<th>movie poster</th>
+</tr>
+</thead>
+<tbody>
+<% @movie.each.do |movie_code| %>
+<tr>
+<td><%=movie['title']%></td>
+<td><%=movie['poster_path']%></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+<%else>
+<p> there is no finded movies</p>
 
