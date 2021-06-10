@@ -1,16 +1,20 @@
 
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
- <header class = "navbar navbar-fixed-top">
-<div class = "container">
+<nav class="navbar navbar-dark bg-primary">
+<h1>DesafioJera (by caarlera)</h1>
+
+<nav class="navbar navbar-light bg-light">
+ 
+  </form>
+</nav>
 </header>
-<nav>
+<nav class="navbar navbar-dark bg-primary">
 <ul class = "navbar" role = "navigation", id = "barNavigation" >
+   <form class="container-fluid justify-content-start">
+    <button class="btn btn-outline-success me-2" type="button"><%= link_to "finded_movies", finded_movies_path %></button>
+    <button class="btn btn-sm btn-outline-secondary" type="button"><%= link_to "Sair", destroy_user_session_path, method: :delete %></button>
+  <button class="btn btn-sm btn-outline-secondary" type="button"><%= link_to "Perfil", edit_user_registration_path %></button>
   
-  <%= link_to "finded_movies", finded_movies_path %>
 </ul>
- <%= link_to "Sair", destroy_user_session_path, method: :delete %>
- <%= link_to "Perfil", edit_user_registration_path %>
 
  </nav>
 
@@ -26,4 +30,4 @@
 
  
  <p class="notice"><%=notice%> </p>
- <p class="alert"><%=alert%></p>*/
+ <p class="alert"><%=alert%></p>

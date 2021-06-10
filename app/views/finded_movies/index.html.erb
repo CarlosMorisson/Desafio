@@ -1,6 +1,20 @@
 <h1> finded movies<h1>
-<%= link_to "Sair", finded_movies_path , method: :post %>
-<%= link_to "Home", root_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+     <div class = "field">
+    <%= form_tag(finds_path, method: :get) do %>
+      <%= label_tag(:movie_name, "Search for a movie:") %>
+      <%= text_field_tag(:movie_name) %>
+      <br>
+      <%= submit_tag("Search!") %>
+     <% end %> 
+  </div>  
+    </div>
+    <div class="col-sm">
+      <%= link_to "Home", root_path %>
+    </div>
+
 
 <% if @findedmovies.any?%>
 <table>
@@ -8,7 +22,7 @@
 <tr>
 <th> Title </th>
 <th>movie poster</th>
-<th>delete movie</th>
+<th>/delete movie</th>
 </tr>
 </thead>
 <tbody>
@@ -16,7 +30,7 @@
 <tr>
 <td><%=movie['title']%></td>
 <td><img src='http://image.tmdb.org/t/p/w185<%=movie['poster_path']%>' /></td>
-<td><%= link_to "Remove from list", finded_movie_path(id: movie['id']), method: :delete %></td>
+<td><%= link_to "Remove from list", finded_movie_path(movie_code: movie['id']), method: :delete %></td>
 </tr>
 <% end %>
 </tbody>

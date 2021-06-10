@@ -7,9 +7,11 @@
       <%= submit_tag("Search!") %>
      <% end %> 
   </div>  
+      <button class="btn btn-outline-success me-2" type="button"><%= link_to "finded_movies", finded_movies_path %></button>
 <% @movie_finds.each do |movie| %>
  <strong> <p><%= movie['title'] %></p> </strong>
  
+
  <% if current_user.finded_movies.exists?(movie_code: movie['id']) %>
     <%= link_to "Remove from list", finded_movie_path(id: movie['id']), method: :delete %>
  <% else %>
@@ -19,6 +21,8 @@
     <% end %> 
  <% end %> 
   <p><img src='http://image.tmdb.org/t/p/w185<%=movie['poster_path']%>'></p>
+  
+  
   <strong><p>Description: </p></strong>
   <p><%= movie['overview'] %></p>
   <p><% movie['poster_path'] %></p>
