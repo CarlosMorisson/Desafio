@@ -1,27 +1,27 @@
-class FindedoviesController < ApplicationController
+class FindedMoviesController < ApplicationController
     def index
-        finded_movies = current_user.finds_movies
+        finded_movies = current_user.finded_movies
         @findedmovies = []
 
-        finds_movies.each do |finded_movies|
-            movie = Tmdb::Movie.detail(finded_movies.movie_finds)
+        finded_movies.each do |finded_movie|
+            movie = Tmdb::Movie.detail(finded_movie.movie_code)
             @findedmovies.push(movie)
         end
 
-        @findsmovies
+        @findedmovies
 
     end
 
     def create
-        puts params[:movie_finds]
-        current_user.finds_movies.create(movie_code: params[:movie_code])
+        puts params[:movie_code]
+        current_user.finded_movies.create(movie_code: params[:movie_code])
 
         redirect_to finded_movies_path
 
     end
 
     def destroy
-        current_user.finded_movies.find_by(id: params[:id]).destroy
+         current_user.finded_movies.find_by(movie_code: params[:id]).destroy
 
         redirect_to finded_movies_path
     end

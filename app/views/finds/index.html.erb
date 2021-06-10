@@ -1,18 +1,37 @@
+<%if @movie_name.present?%>
+<div class = "field">
+    <%= form_tag(finds_path, method: :get) do %>
+      <%= label_tag(:movie_name, "Search for a movie:") %>
+      <%= text_field_tag(:movie_name) %>
+      <br>
+      <%= submit_tag("Search!") %>
+     <% end %> 
+  </div>  
 <% @movie_finds.each do |movie| %>
  <strong> <p><%= movie['title'] %></p> </strong>
-
- <%# if current_user.wishes.exists?(movie_id: movie['id']) %>
-    <%#= link_to "Remove from list", wish_path(id: movie['id']), method: :delete, class: "button is-info" %>
- <%# else %>
-    <%#= form_tag(wishes_path, :method => :post) do %>
-      <%#= hidden_field_tag(:movie_id, movie['id'] ) %>
-      <%#= submit_tag("Add to list", class: "button is-info")  %>
-    <%# end %> 
- <%# end %> 
-  <p><img src='http://cf2.imgobject.com/t/p/w200/<%=movie['poster_path']%>'></p>
+ 
+ <% if current_user.finded_movies.exists?(movie_code: movie['id']) %>
+    <%= link_to "Remove from list", finded_movie_path(id: movie['id']), method: :delete %>
+ <% else %>
+    <%= form_tag(finded_movies_path, method: :post) do %>
+      <%= hidden_field_tag(:movie_code, movie['id'] ) %>
+      <%= submit_tag("Save Movie")  %>
+    <% end %> 
+ <% end %> 
+  <p><img src='http://image.tmdb.org/t/p/w185<%=movie['poster_path']%>'></p>
   <strong><p>Description: </p></strong>
   <p><%= movie['overview'] %></p>
   <p><% movie['poster_path'] %></p>
   <strong><p>Release date of the movie:</p></strong>
   <p><%= movie['release_date'] %></p> <br>
 <% end %>
+<%else%>
+ <div class = "field">
+    <%= form_tag(finds_path, method: :get) do %>
+      <%= label_tag(:movie_name, "Search for a movie:") %>
+      <%= text_field_tag(:movie_name) %>
+      <br>
+      <%= submit_tag("Search!") %>
+     <% end %> 
+  </div>  
+  <%end%> 

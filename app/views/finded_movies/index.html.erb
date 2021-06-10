@@ -1,21 +1,30 @@
 <h1> finded movies<h1>
+<%= link_to "Sair", finded_movies_path , method: :post %>
+<%= link_to "Home", root_path %>
 
-<% if @movie.finded_movies.present?%>
+<% if @findedmovies.any?%>
 <table>
 <thead>
 <tr>
 <th> Title </th>
 <th>movie poster</th>
+<th>delete movie</th>
 </tr>
 </thead>
 <tbody>
-<% @movie.each.do |movie_code| %>
+<% @findedmovies.each do |movie| %>
 <tr>
 <td><%=movie['title']%></td>
-<td><%=movie['poster_path']%></td>
+<td><img src='http://image.tmdb.org/t/p/w185<%=movie['poster_path']%>' /></td>
+<td><%= link_to "Remove from list", finded_movie_path(id: movie['id']), method: :delete %></td>
 </tr>
 <% end %>
 </tbody>
 </table>
-<%else>
+<%else%>
 <p> there is no finded movies</p>
+<%end%>
+
+
+
+
