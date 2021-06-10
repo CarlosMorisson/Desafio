@@ -28,6 +28,45 @@ body {
   background: rgba (0,0,0,.5);
 
 }
+html {
+  background-color: #1c1d1d;
+}
+p, li, h1, div, button{
+  margin: 0;
+  padding: 20px 0;
+ 
+
+}
+p, li, h1, div {
+  background-color: rgb(44, 41, 41);
+  color: rgb(253, 252, 252);
+  width: 500px;
+  border: 1px solid rgb(250, 248, 248);
+}
+html {font-size: 26px; /* px significa "pixels": o tamanho da fonte base é agora de 10 pixels */
+  font-family: "Open Sans", sans-serif; /* este deve ser o nome da fonte que você obteve no Google Fonts */
+}
+img {
+  display: block;
+  margin: 0 auto;
+}
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #7c7a7a;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}
+h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+p, li, button {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

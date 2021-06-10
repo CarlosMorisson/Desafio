@@ -1,5 +1,6 @@
+<h1>|Movies|</h1>
 <%if @movie_name.present?%>
-<div class = "field">
+ <div class = "field">
     <%= form_tag(finds_path, method: :get) do %>
       <%= label_tag(:movie_name, "Search for a movie:") %>
       <%= text_field_tag(:movie_name) %>
@@ -21,8 +22,6 @@
     <% end %> 
  <% end %> 
   <p><img src='http://image.tmdb.org/t/p/w185<%=movie['poster_path']%>'></p>
-  
-  
   <strong><p>Description: </p></strong>
   <p><%= movie['overview'] %></p>
   <p><% movie['poster_path'] %></p>

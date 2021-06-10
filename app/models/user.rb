@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
 
-  has_many :finded_movies
+  has_many :finded_movies, dependent: :destroy
 
 end

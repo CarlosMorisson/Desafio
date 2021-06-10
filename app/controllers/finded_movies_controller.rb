@@ -13,7 +13,6 @@ class FindedMoviesController < ApplicationController
     end
 
     def create
-        puts params[:movie_code]
         current_user.finded_movies.create(movie_code: params[:movie_code])
 
         redirect_to finded_movies_path

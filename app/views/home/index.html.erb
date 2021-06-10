@@ -1,10 +1,9 @@
 
 <nav class="navbar navbar-dark bg-primary">
-<h1>DesafioJera (by caarlera)</h1>
+  <h1>|DesafioJera (by caarlera)|</h1>
 
-<nav class="navbar navbar-light bg-light">
  
-  </form>
+<nav class="navbar navbar-light bg-light">
 </nav>
 </header>
 <nav class="navbar navbar-dark bg-primary">
@@ -13,19 +12,20 @@
     <button class="btn btn-outline-success me-2" type="button"><%= link_to "finded_movies", finded_movies_path %></button>
     <button class="btn btn-sm btn-outline-secondary" type="button"><%= link_to "Sair", destroy_user_session_path, method: :delete %></button>
   <button class="btn btn-sm btn-outline-secondary" type="button"><%= link_to "Perfil", edit_user_registration_path %></button>
+  </form>
   
-</ul>
-
- </nav>
-
-<div class = "field">
+  <div class = "field">
     <%= form_tag(finds_path, method: :get) do %>
       <%= label_tag(:movie_name, "Search for a movie:") %>
       <%= text_field_tag(:movie_name) %>
       <br>
       <%= submit_tag("Search!") %>
      <% end %> 
-  </div>   
+  </div> 
+</ul>
+
+ </nav>
+  
 
 
  
